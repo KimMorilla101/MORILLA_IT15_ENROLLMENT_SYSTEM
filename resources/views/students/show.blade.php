@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h1>Student Profile</h1>
+    <h3 class="mb-3">Student Profile</h3>
     <p><strong>Student Number:</strong> {{ $student->student_number }}</p>
     <p><strong>Name:</strong> {{ $student->first_name }} {{ $student->last_name }}</p>
     <p><strong>Email:</strong> {{ $student->email }}</p>
-    <h3>Enrolled Courses</h3>
+    <h3 class="mb-3">Enrolled Courses</h3>
     <ul>
         @forelse($student->courses as $course)
             <li>{{ $course->course_code }} - {{ $course->course_name }}</li>
@@ -13,11 +13,11 @@
             <li>No courses enrolled.</li>
         @endforelse
     </ul>
-    <h3>Enroll in a Course</h3>
+    <h3 class="mb-4">Enroll in a Course</h3>
     <form action="{{ route('enrollments.enroll') }}" method="POST">
         @csrf
         <input type="hidden" name="student_id" value="{{ $student->id }}">
-        <div class="mb-3">
+        <div class="mb-4">
             <label for="course_id" class="form-label">Select Course</label>
             <select name="course_id" id="course_id" class="form-select">
                 @foreach(\App\Models\Course::all() as $course)

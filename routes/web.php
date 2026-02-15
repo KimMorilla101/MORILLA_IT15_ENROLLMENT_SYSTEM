@@ -8,10 +8,11 @@ use App\Http\Controllers\CourseController;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+// show a custom landing page instead of redirecting to students
 Route::get('/', function () {
-	return redirect()->route('students.index');
+    $students = \App\Models\Student::all();
+    return view('landing', compact('students'));
 });
-
 
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');

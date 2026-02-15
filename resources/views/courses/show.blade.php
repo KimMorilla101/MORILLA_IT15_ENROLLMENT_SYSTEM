@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h1>Course Details</h1>
+    <h3 class="mb-3">Course Details</h3>
     <p><strong>Course Code:</strong> {{ $course->course_code }}</p>
     <p><strong>Course Name:</strong> {{ $course->course_name }}</p>
     <p><strong>Capacity:</strong> {{ $course->capacity }}</p>
-    <h3>Enrolled Students</h3>
+    <h3 class="mb-3">Enrolled Students</h3>
     <ul>
         @forelse($course->students as $student)
             <li>{{ $student->student_number }} - {{ $student->first_name }} {{ $student->last_name }}</li>
@@ -13,7 +13,7 @@
             <li>No students enrolled.</li>
         @endforelse
     </ul>
-    <h3>Enroll a Student</h3>
+    <h4 class="mb-3">Enroll a Student</h4>
     <form action="{{ route('enrollments.enroll') }}" method="POST">
         @csrf
         <input type="hidden" name="course_id" value="{{ $course->id }}">
