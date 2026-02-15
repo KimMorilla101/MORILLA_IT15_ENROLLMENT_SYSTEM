@@ -63,13 +63,7 @@
 <body>
     <nav class="navbar navbar-expand-lg mb-4">
         <div class="container">
-            <svg class="me-2" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block;">
-                <rect x="2" y="2" width="36" height="36" rx="8" fill="#800000"/>
-                <path d="M10 15h20M10 20h20M10 25h20" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="12" cy="15" r="2" fill="white"/>
-                <circle cx="12" cy="20" r="2" fill="white"/>
-                <circle cx="12" cy="25" r="2" fill="white"/>
-            </svg>
+          <img src="{{ asset('images/logo.png') }}" alt="Logo" width="120">
             <a class="navbar-brand" href="/">STUDENT PORTAL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
